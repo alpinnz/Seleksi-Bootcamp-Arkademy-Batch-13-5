@@ -10,7 +10,7 @@ const indexControllers = require('./../controllers/indexControllers')
 // });
 
 router.get('/', indexControllers.read);
-router.post('/add', indexControllers.add);
+router.post('/', indexControllers.add);
 router.put('/edit', indexControllers.edit);
 router.delete('/delete', indexControllers.delete);
 

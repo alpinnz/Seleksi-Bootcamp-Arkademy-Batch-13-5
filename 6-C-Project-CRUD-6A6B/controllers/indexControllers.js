@@ -16,10 +16,18 @@ exports.read = async (req, res, next) => {
 
 exports.add = async (req, res, next) => {
 
-    let query = mysql.format('INSERT INTO  `product`(`id`, `name`, `price`, `id_category`, `id_cashier`) VALUES (?,?,?,?,?)',
-        [req.body.id, req.body.name, req.body.pice, req.body.id_category, req.body.id_cashier])
+    console.log(req.body);
+    let name = req.body.name;
+    let price = req.body.price;
+    let id_category = Number(req.body.id_category);
+    let id_cashier = Number(req.body.id_cashier);
+
+    let query = mysql.format('INSERT INTO  `product`(`name`, `price`, `id_category`, `id_cashier`) VALUES (?,?,?,?)',
+        [name, price, id_category, id_cashier])
     let result = await pool.query(query);
-    res.send(result);
+    res.redirect(301, '/')
+    console.log(result)
+
 };
 
 exports.edit = async (req, res, next) => {};
