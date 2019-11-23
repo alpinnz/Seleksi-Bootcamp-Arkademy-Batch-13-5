@@ -11,7 +11,7 @@ const indexControllers = require('./../controllers/indexControllers')
 
 router.get('/', indexControllers.read);
 router.post('/', indexControllers.add);
-router.put('/edit', indexControllers.edit);
+router.put('/', indexControllers.edit);
 router.delete('/delete', indexControllers.delete);
 
 module.exports = router;

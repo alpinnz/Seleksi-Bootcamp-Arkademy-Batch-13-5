@@ -30,7 +30,21 @@ exports.add = async (req, res, next) => {
 
 };
 
-exports.edit = async (req, res, next) => {};
+exports.edit = async (req, res, next) => {
+
+    console.log(req.body);
+    let id = req.body.id;
+    let name = req.body.name;
+    let price = req.body.price;
+    let id_category = Number(req.body.id_category);
+    let id_cashier = Number(req.body.id_cashier);
+    let query = mysql.format('UPDATE SET `name`=?, `price`=?, `id_category`=?, `id_cashier`=? WHERE id=?',
+        [name, price, id_category, id_cashier, id])
+    let result = await pool.query(query);
+    res.redirect(301, '/')
+    console.log(result)
+
+};
 
 exports.delete = async (req, res, next) => {
 
