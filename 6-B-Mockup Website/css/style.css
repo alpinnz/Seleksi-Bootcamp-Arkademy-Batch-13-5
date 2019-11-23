@@ -1,7 +1,10 @@
-.a:not([href]):not([tabindex]) {
-    color: null;
+.text-pink {
+    color: hotpink;
 }
 
-.textBanner {
-    color: hotpink;
+.table-set {
+    border: 1em;
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
 }
