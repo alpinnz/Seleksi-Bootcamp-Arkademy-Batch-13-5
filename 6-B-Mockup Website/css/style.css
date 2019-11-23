@@ -1,10 +1,15 @@
-.text-pink {
+a:not([href]):not([tabindex]) {
     color: hotpink;
 }
 
+.btn-dark {
+    background-color: hotpink;
+    border-color: hotpink;
+}
+
 .table-set {
-    border: 1em;
-    border-collapse: collapse;
+    /* border: 1em; */
+    /* border-collapse: collapse; */
     border-radius: 1em;
     overflow: hidden;
 }
