@@ -10,8 +10,8 @@ const indexControllers = require('./../controllers/indexControllers')
 // });
 
 router.get('/', indexControllers.read);
-router.post('/', indexControllers.add);
-router.put('/', indexControllers.edit);
-router.delete('/delete', indexControllers.delete);
+router.post('/add', indexControllers.add);
+router.post('/edit', indexControllers.edit);
+router.post('/delete', indexControllers.delete);
 
 module.exports = router;

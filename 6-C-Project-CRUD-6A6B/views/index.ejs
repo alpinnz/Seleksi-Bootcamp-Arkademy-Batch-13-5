@@ -54,12 +54,16 @@
           <td><%= dataTable[i].category %></td>
           <td><%= dataTable[i].price %></td>
           <td>
-            <button type="button" class="btn text-success" data-toggle="modal"
-              data-target="#edit-<%= dataTable[i].id %>">Edit</button>
-            |
-            <button type="button" class="btn text-danger" data-toggle="modal"
-              data-target="#delete-<%= dataTable[i].id %>">Delete</button>
+            <form method="POST" action="/delete">
+              <button type="button" class="btn text-success" data-toggle="modal"
+                data-target="#edit-<%= dataTable[i].id %>">Edit</button>
+              |
+              <input type="text" hidden name="id" value="<%= dataTable[i].id %>">
+              <!-- <button type="submit" class="btn text-danger">Delete</button> -->
+              <button type="submit" class="btn text-danger" data-toggle="modal"
+                data-target="#delete-<%= dataTable[i].id %>">Delete</button>
           </td>
+          </form>
         </tr>
         <% } %>
       </tbody>
@@ -78,7 +82,7 @@
         </div>
         <div class="modal-body no-border">
           <div class="container">
-            <form method="POST" action="/">
+            <form method="POST" action="/add">
               <div class="form-group">
                 <label>Cashier</label>
                 <select class="form-control" name="id_cashier" required>
@@ -117,57 +121,6 @@
     </div>
   </div>
 
-
-  <!-- Edit Modal -->
-  <!-- <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content border-radius">
-        <div class="modal-header no-border">
-          <h5 class="modal-title" id="exampleModalLabel">EDIT</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body no-border">
-          <div class="container">
-            <form method="POST" action="/">
-              <div class="form-group">
-                <label>Cashier</label>
-                <select class="form-control" name="id_cashier" required>
-                  <option value="">-- select --</option>
-                  <% for(let i=0; i < dataCashier.length; i++) { %>
-                  <option value="<%= dataCashier[i].id %>"><%= dataCashier[i].name %>
-                  </option>
-                  <% } %>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Product</label>
-                <input type="text" class="form-control" name="name" placeholder="Product" required>
-              </div>
-              <div class="form-group">
-                <label>Category</label>
-                <select class="form-control" name="id_category" required>
-                  <option value="">-- select --</option>
-                  <% for(let i=0; i < dataCategory.length; i++) { %>
-                  <option value="<%= dataCategory[i].id %>"><%= dataCategory[i].name %></option>
-                  <% } %>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="formGroupExampleInput2"></label>
-                <input type="text" class="form-control" name="price" placeholder="RP.10.000" required>
-              </div>
-              <div class="modal-footer no-border">
-                <button type="submit" class="btn btn-dark">EDIT</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
   <% for(let i=0; i < dataTable.length; i++) { %>
   <!-- Edit Modal Dinamic -->
@@ -213,7 +166,6 @@
                 </select>
               </div>
               <!-- selected -->
-
               <div class="form-group">
                 <label for="formGroupExampleInput2"></label>
                 <input type="text" class="form-control" value="<%= dataTable[i].price %>" name="price"
@@ -231,18 +183,20 @@
   <% } %>
 
   <!-- Delete Modal -->
-  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+  <% for(let i=0; i < dataTable.length; i++) { %>
+  <div class="modal fade" id="delete-<%= dataTable[i].id %>" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content border-radius">
         <div class="modal-header no-border">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" onclick="location.href='http://localhost:3000/'" class="close" data-dismiss="modal"
+            aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body no-border">
           <div class="container text-center">
-            <H4>Data Raisa Andriani <a class="text-pink"> #1</a></H4>
+            <H4>Data <%= dataTable[i].cashier %> <a class="text-pink"> #<%= dataTable[i].id %></a></H4>
             <img class="m-2" src="img/cropped-centang.png" width="300" height="300">
             <H4>Berhasil Dihapus!</H4>
           </div>
@@ -250,6 +204,7 @@
       </div>
     </div>
   </div>
+  <% } %>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

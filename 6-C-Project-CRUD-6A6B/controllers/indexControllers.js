@@ -33,12 +33,12 @@ exports.add = async (req, res, next) => {
 exports.edit = async (req, res, next) => {
 
     console.log(req.body);
-    let id = req.body.id;
+    let id = Number(req.body.id);
     let name = req.body.name;
     let price = req.body.price;
     let id_category = Number(req.body.id_category);
     let id_cashier = Number(req.body.id_cashier);
-    let query = mysql.format('UPDATE SET `name`=?, `price`=?, `id_category`=?, `id_cashier`=? WHERE id=?',
+    let query = mysql.format('UPDATE `product` SET `name`=?,`price`=?,`id_category`=?,`id_cashier`=? WHERE id=?',
         [name, price, id_category, id_cashier, id])
     let result = await pool.query(query);
     res.redirect(301, '/')
@@ -48,4 +48,13 @@ exports.edit = async (req, res, next) => {
 
 exports.delete = async (req, res, next) => {
 
+    console.log(req.body);
+    let id = Number(req.body.id);
+    let query = mysql.format('DELETE FROM `product` WHERE id=? ', [id])
+    let result = await pool.query(query);
+    setTimeout(() => {
+        res.redirect(301, '/')
+    }, 5000);
+    // res.end();
+    console.log(result)
 };
