@@ -78,34 +78,31 @@
           <div class="container">
             <form>
               <div class="form-group">
-                <label></label>
+                <label>Cashier</label>
                 <select class="form-control" id="InputCashier">
-                  <option>Raisa Andriana</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                  <option>-</option>
+                  <% for(let i=0; i < dataCashier.length; i++) { %>
+                  <option><%= dataCashier[i].name %></option>
+                  <% } %>
                 </select>
               </div>
               <div class="form-group">
-                <label></label>
+                <label>Product</label>
+                <input type="text" class="form-control" id="Category" placeholder="Product">
+              </div>
+              <div class="form-group">
+                <label>Category</label>
                 <select class="form-control" id="inputProduct">
-                  <option>Ice Tea</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                  <option>-</option>
+                  <% for(let i=0; i < dataCategory.length; i++) { %>
+                  <option><%= dataCategory[i].name %></option>
+                  <% } %>
                 </select>
               </div>
-              <div class="form-group">
-                <label for="formGroupExampleInput"></label>
-                <input type="text" class="form-control" id="inputCategory" placeholder="Drink">
-              </div>
+
               <div class="form-group">
                 <label for="formGroupExampleInput2"></label>
-                <input type="text" class="form-control" id="inputPrice" placeholder="RP.10.000">
+                <input type="text" class="form-control" id="Price" placeholder="RP.10.000">
               </div>
               <div class="modal-footer no-border">
                 <button type="button" class="btn btn-dark">ADD</button>
