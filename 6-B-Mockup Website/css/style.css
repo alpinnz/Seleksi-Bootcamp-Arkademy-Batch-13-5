@@ -7,6 +7,10 @@ a:not([href]):not([tabindex]) {
     border-color: hotpink;
 }
 
+.text-pink {
+    color: hotpink;
+}
+
 .table-set {
     /* border: 1em; */
     /* border-collapse: collapse; */

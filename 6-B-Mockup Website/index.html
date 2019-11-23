@@ -56,7 +56,8 @@
                         <button type="button" class="btn text-success" data-toggle="modal"
                             data-target="#edit">Edit</button>
                         |
-                        <button type="button" class="btn text-danger">Delete</button>
+                        <button type="button" class="btn text-danger" data-toggle="modal"
+                            data-target="#delete">Delete</button>
                     </td>
                 </tr>
                 <tr>
@@ -66,9 +67,11 @@
                     <td>Food</td>
                     <td>Rp.15.000</td>
                     <td>
-                        <button type="button" class="btn text-success">Edit</button>
+                        <button type="button" class="btn text-success" data-toggle="modal"
+                            data-target="#edit">Edit</button>
                         |
-                        <button type="button" class="btn text-danger">Delete</button>
+                        <button type="button" class="btn text-danger" data-toggle="modal"
+                            data-target="#delete">Delete</button>
                     </td>
                 </tr>
                 <tr>
@@ -78,9 +81,11 @@
                     <td>Food</td>
                     <td>Rp.30.000</td>
                     <td>
-                        <button type="button" class="btn text-success">Edit</button>
+                        <button type="button" class="btn text-success" data-toggle="modal"
+                            data-target="#edit">Edit</button>
                         |
-                        <button type="button" class="btn text-danger">Delete</button>
+                        <button type="button" class="btn text-danger" data-toggle="modal"
+                            data-target="#delete">Delete</button>
                     </td>
                 </tr>
                 <tr>
@@ -90,9 +95,11 @@
                     <td>Food</td>
                     <td>Rp.35.000</td>
                     <td>
-                        <button type="button" class="btn text-success">Edit</button>
+                        <button type="button" class="btn text-success" data-toggle="modal"
+                            data-target="#edit">Edit</button>
                         |
-                        <button type="button" class="btn text-danger">Delete</button>
+                        <button type="button" class="btn text-danger" data-toggle="modal"
+                            data-target="#delete">Delete</button>
                     </td>
                 </tr>
                 <tr>
@@ -102,9 +109,11 @@
                     <td>Drink</td>
                     <td>Rp.55.000</td>
                     <td>
-                        <button type="button" class="btn text-success">Edit</button>
+                        <button type="button" class="btn text-success" data-toggle="modal"
+                            data-target="#edit">Edit</button>
                         |
-                        <button type="button" class="btn text-danger">Delete</button>
+                        <button type="button" class="btn text-danger" data-toggle="modal"
+                            data-target="#delete">Delete</button>
                     </td>
                 </tr>
                 <tr>
@@ -114,9 +123,11 @@
                     <td>Food</td>
                     <td>Rp.15.000</td>
                     <td>
-                        <button type="button" class="btn text-success">Edit</button>
+                        <button type="button" class="btn text-success" data-toggle="modal"
+                            data-target="#edit">Edit</button>
                         |
-                        <button type="button" class="btn text-danger">Delete</button>
+                        <button type="button" class="btn text-danger" data-toggle="modal"
+                            data-target="#delete">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -149,7 +160,7 @@
                             </div>
                             <div class="form-group">
                                 <label></label>
-                                <select class="form-control" id="inputCategory">
+                                <select class="form-control" id="inputProduct">
                                     <option>Ice Tea</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -160,18 +171,92 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"></label>
-                                <input type="text" class="form-control" id="inputProduct" placeholder="Drink">
+                                <input type="text" class="form-control" id="inputCategory placeholder=" Drink">
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput2"></label>
                                 <input type="text" class="form-control" id="inputPrice" placeholder="RP.10.000">
                             </div>
+                            <div class="modal-footer no-border">
+                                <button type="button" class="btn btn-dark">ADD</button>
+                            </div>
                         </form>
                     </div>
-
                 </div>
-                <div class="modal-footer no-border">
-                    <button type="button" class="btn btn-dark">ADD</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content border-radius">
+                <div class="modal-header no-border">
+                    <h5 class="modal-title" id="exampleModalLabel">EDIT</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body no-border">
+                    <div class="container">
+                        <form>
+                            <div class="form-group">
+                                <label></label>
+                                <select class="form-control" id="InputCashier">
+                                    <option>Raisa Andriana</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label></label>
+                                <select class="form-control" id="inputProduct">
+                                    <option>Ice Tea</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput"></label>
+                                <input type="text" class="form-control" id="inputCategory" placeholder="Drink">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2"></label>
+                                <input type="text" class="form-control" id="inputPrice" placeholder="RP.10.000">
+                            </div>
+                            <div class="modal-footer no-border">
+                                <button type="button" class="btn btn-dark">EDIT</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content border-radius">
+                <div class="modal-header no-border">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body no-border">
+                    <div class="container text-center">
+                        <H4>Data Raisa Andriani <a class="text-pink"> #1</a></H4>
+                        <img class="m-2" src="img/cropped-centang.png" width="300" height="300">
+                        <H4>Berhasil Dihapus!</H4>
+                    </div>
                 </div>
             </div>
         </div>
